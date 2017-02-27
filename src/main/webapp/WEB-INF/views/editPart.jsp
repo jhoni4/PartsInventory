@@ -4,8 +4,8 @@
 <link href="${jstlCss}" rel="stylesheet" />
 
 <h1>Edit Parts</h1>
-<form:form action="${pageContext.request.contextPath}/part/editPart" method="post" commandName="part" path="partId" 
-			value="${part.partId}">
+<form:form action="${pageContext.request.contextPath}/part/editPart" method="post" commandName="part">
+	<form:hidden path="partId" value="${part.partId}" />
 	<div class="form-group">
 		<label for="name">Name</label>
 		<form:input path="name" id="name" class="form-Control" value="${part.name}"/>

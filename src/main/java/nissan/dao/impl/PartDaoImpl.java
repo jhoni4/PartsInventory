@@ -21,7 +21,6 @@ public class PartDaoImpl implements PartDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	@Override
 	public List<Part> getPartsList() {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = (Query) session.createQuery("from Part");

@@ -33,18 +33,28 @@
  <form:form class="cf" action="/part/addPart" method="post" commandName="part">
 	<div class="half left cf">
 	  <div class="form-group">
-	    <form:input type="text" path="name" id="name" class="form-Control" placeholder="Name"/>
+	  <label for="name">Part Name:</label>
+	     <form:input type="text" path="name" id="name" class="form-Control" placeholder="Name"/>
 	  </div>
 	  <div class="form-group">
-	    <form:input type="text" path="quantity" id="quantity" class="form-Control" placeholder="Quantity"/>
+	  <label for=quantity>Quantity:</label>
+	     <form:input type="text" path="quantity" id="quantity" class="form-Control" placeholder="Quantity"/>
 	  </div>
 	  <div class="form-group">
-	    <form:input type="text" path="modelNumber" id="modelNumber" class="form-Control" placeholder="Model"/>
+	  <label for="modelNumber">Model:</label>
+	     <form:input type="text" path="modelNumber" id="modelNumber" class="form-Control" placeholder="Model"/>
 	  </div>
 	 </div>
 	  <div class="half right cf">
-	    <form:textarea name="message" type="text" path="description" id="description" class="form-Control" placeholder="Description"/>
-	  </div>  
+	  <label for="description">Description:</label>
+	     <form:textarea name="message" type="text" path="description" id="description" class="form-Control" placeholder="Description"/>
+	  </div>
+	  <%-- <div class="half right cf">
+	  <label for="department">Department:</label>
+	     <form:select path="department" id="department" class="form-Control" >
+	    	<form:options items="${part.departmentOptions}" />
+	    </form:select>
+	  </div> --%>  
   <input type="submit" value="Submit" id="input_submit">
 </form:form> 
 <a href="/part">Back</a>

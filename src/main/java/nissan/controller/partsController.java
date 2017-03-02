@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import nissan.model.Part;
 import nissan.service.PartService;
@@ -80,14 +80,11 @@ public class partsController {
 	}
 	
 
-	@RequestMapping("/part/deletePart/{partId}")
-	public String deletePart(@PathVariable int partId, Model model) {
-		Part part = partService.getPartsById(partId);
-		partService.deleteParts(part);
-
+	@GetMapping("/part/deletePart/{partId}")
+	public String deletePart(@PathVariable("partId") int partId, Model model) {
+		partService.deleteParts(partService.getPartsById(partId));
 		return "redirect:/part";
 
-		//
 	}
 
 }

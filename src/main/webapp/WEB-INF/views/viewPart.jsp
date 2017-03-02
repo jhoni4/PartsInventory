@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<button type="button" class="btn btn-default btn-lg">
-			<a href="<spring:url value="/parts" />"> <span
+			<a href="<spring:url value="/part" />"> <span
 				class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Back
 			</a>
 		</button>

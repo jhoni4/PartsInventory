@@ -2,10 +2,8 @@ package nissan.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -13,10 +11,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Part implements Serializable {
 
+	
+	
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2484857323215276506L;
+	private static final long serialVersionUID = 1812460526072272097L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int partId;
@@ -29,8 +31,11 @@ public class Part implements Serializable {
 	@Min(value = 0, message = "The part quantity must not be less than zero.")
 	private int quantity;
 
-	public Part() {
-	}
+	@OneToOne
+	@JoinColumn(name = "employeeId")
+	private Employee employee;
+	
+	public Part() {}
 
 	public int getPartId() {
 		return partId;
@@ -52,8 +57,8 @@ public class Part implements Serializable {
 		return modelNumber;
 	}
 
-	public void setModelNumber(String model) {
-		this.modelNumber = model;
+	public void setModelNumber(String modelNumber) {
+		this.modelNumber = modelNumber;
 	}
 
 	public String getDescription() {
@@ -72,12 +77,5 @@ public class Part implements Serializable {
 		this.quantity = quantity;
 	}
 
-	public Part(int partId, String name, String modelNumber, String description, int quantity) {
-		this.partId = partId;
-		this.name = name;
-		this.modelNumber = modelNumber;
-		this.description = description;
-		this.quantity = quantity;
-	}
 
 }

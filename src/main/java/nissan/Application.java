@@ -1,5 +1,7 @@
 package nissan;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.jpa.HibernateEntityManagerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,9 +14,14 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 
 	}
-	@Bean
-	public HibernateJpaSessionFactoryBean sessionFactory() {
-	    return new HibernateJpaSessionFactoryBean();
-	}
 
+//	@Bean
+//	public HibernateJpaSessionFactoryBean sessionFactory() {
+//		return new HibernateJpaSessionFactoryBean();
+//	}
+
+	 @Bean
+	    public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf) {
+	        return hemf.getSessionFactory();
+	    }
 }

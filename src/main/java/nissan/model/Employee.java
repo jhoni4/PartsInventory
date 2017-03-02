@@ -17,6 +17,9 @@ public class Employee implements Serializable {
 	private String firstName;
 	private String lastName;
 	private int employeeNumber;
+	
+	@OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Part part;
 
 	public Employee() {
 	}

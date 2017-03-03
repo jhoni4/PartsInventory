@@ -48,7 +48,6 @@
 		message.
 	</div>
 
-	</div>
 	<!-- /.container -->
 
 	<!-- <script type="text/javascript"

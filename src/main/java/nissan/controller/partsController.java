@@ -81,8 +81,8 @@ public class partsController {
 	
 
 	@GetMapping("/part/deletePart/{partId}")
-	public String deletePart(@PathVariable("partId") int partId, Model model) {
-		partService.deleteParts(partService.getPartsById(partId));
+	public String deletePart(@PathVariable("partId") int partId) {
+		partService.deleteParts(partId);
 		return "redirect:/part";
 
 	}

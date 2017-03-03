@@ -11,6 +11,7 @@ import nissan.model.Part;
 import nissan.service.PartService;
 
 @Service
+@Transactional
 public class PartServiceImpl  implements PartService{
 	
 	@Autowired
@@ -34,8 +35,8 @@ public class PartServiceImpl  implements PartService{
 		
 	}
 
-	public void deleteParts(Part part) {
-		partsDao.deleteParts(part);
+	public void deleteParts(int partId) {
+		partsDao.deleteParts(partId);
 		
 	}
 

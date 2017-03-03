@@ -14,6 +14,6 @@ public interface PartDao {
 
 	void editParts(Part part);
 
-	void deleteParts(Part part);
+	void deleteParts(int partId);
 
 }

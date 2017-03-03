@@ -3,18 +3,15 @@ package nissan.dao.impl;
 import java.util.List;
 
 import org.hibernate.Query;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import nissan.dao.PartDao;
 import nissan.model.Part;
 
 @Repository
-@Transactional
 public class PartDaoImpl implements PartDao {
 
 	
@@ -50,9 +47,9 @@ public class PartDaoImpl implements PartDao {
 		
 	}
 
-	public void deleteParts(Part part) {
+	public void deleteParts(int partId) {
 		Session session = sessionFactory.getCurrentSession();
-		session.delete(part);
+		session.delete(session.get(Part.class, partId));
 		session.flush();
 	}
 

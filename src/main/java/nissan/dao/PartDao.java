@@ -8,6 +8,7 @@ public interface PartDao {
 
 	List<Part> getPartsList();
 
+	
 	Part getPartsById(int partId);
 
 	void addParts(Part part);
